@@ -88,7 +88,7 @@ export default function Ex_6_1() {
       </View>
       <View style={styles.header2}>
         <Text style={{ textAlign: "center" }}> Person 1 </Text>
-        <Text style={{ textAlign: "center" }}> Person 2 </Text>
+        <Text style={{ textAlign: "center" }}> People 2 </Text>
         <Text style={{ textAlign: "center" }}> Person 3 </Text>
       </View>
 
