@@ -12,6 +12,7 @@ import {
   FlatList,
 } from "react-native";
 
+const Instagram_logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png";
 const DATA = [
   {
     id: "1",
@@ -47,9 +48,16 @@ export default function Ex_6_1() {
         <Text>{item.authorName}</Text>
       </View>
 
-      <Image source={item.image} />
+      {/* Khối thứ 2 */}
+      <Image source={item.image}  style ={styles.articleImage}/>
 
-      <View></View>
+      {/* Khối thứ 3 */}
+      <View >
+        {/* <FontAwesome5 name="heart" size="24" style={{marginRight:15}} />
+        <FontAwesome5 name="comment" size="24" style={{marginRight:15}} />
+        <FontAwesome5 name="paper-plane" size="24" /> */}
+
+      </View>
     </View>
   );
 
@@ -61,7 +69,7 @@ export default function Ex_6_1() {
       <View style={styles.header}>
         <FontAwesome5 name="camera" size={35} />
         <Image
-          source={require("../assets/instagram/instagram_1.png")}
+          source={{uri:Instagram_logo}}
           style={styles.Logo}
         />
         <Image
@@ -102,12 +110,14 @@ export default function Ex_6_1() {
   );
 }
 
+const PADDING_HORIZONTAL = 15;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   header: {
-    paddingHorizontal:15,
+    paddingHorizontal:PADDING_HORIZONTAL,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -118,9 +128,17 @@ const styles = StyleSheet.create({
   tinyLogo: {
     width: 40,
     height: 40,
+    borderRadius: 18,
   },
   Logo: {
+    resizeMode:"contain",
     width: 200,
     height: 50,
   },
+  articleImage:{
+    resizeMode:"contain",
+    width: "100%",
+    backgroundColor:"red",
+  }
+ 
 });
